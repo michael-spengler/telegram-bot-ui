@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Telegram Bot UI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        function sendMessage() {
+            var receiverChatId = document.getElementById('receiverChatId').value
+            var textMessage = document.getElementById('textMessage').value
+
+            fetch(`http://localhost:3080/sendMessage/chatId/${receiverChatId}/textMessage/${textMessage}`)
+                .then((result) => alert('sent successfully'))
+                .catch((error) => alert('shit happened'))
+        }
+    </script>
+    <div class="container">
+        <h2 style="text-align: center; margin-top:10%;">Send Message</h2>
+        <div class="form-group">
+            <label for="chatId">Receiver ChatId:</label>
+            <input id="receiverChatId" type="number" class="form-control" id="chatId" value="176632339"
+                   placeholder="Enter receiver chat id" name="chatId" required>
+        </div>
+        <div class="form-group">
+            <label for="textMessage">Text Message:</label>
+            <textarea id="textMessage" type="number" class="form-control" id="textMessage"
+                      placeholder="Enter text message" name="textMessage" required></textarea>
+        </div>
+        <button onclick="sendMessage()" class="btn btn-primary">Submit</button>
+    </div>
+
+</body>
+
+</html>
