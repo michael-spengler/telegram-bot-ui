@@ -8,11 +8,11 @@ export class Sender {
 
     public static async send(token: string, chatId: number, text: string) {
         Sender.counter += 1
-        log.info(`sending message to chatId ${chatId}: ${text}`)
         if (Sender.counter < limitPerHour){
+            log.info(`sending message to chatId ${chatId}: ${text}`)
             await Request.get(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`)
         } else {
-            log.warning(`limit of messages per hour reached.`)
+            log.warning(`limit of messages per hour reached - counter is at ${Sender.counter} - limit is at ${limitPerHour}.`)
         }
     }
 
