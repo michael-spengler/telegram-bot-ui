@@ -4,7 +4,7 @@
 
 ```sh
 
-deno run --allow-read --allow-net ui-server.ts
+deno run --allow-read --allow-net bot-ui-server.ts
 
 ```
 
@@ -12,7 +12,7 @@ or via pm2
 
 ```sh
 
-pm2 start  --interpreter="deno" --interpreter-args="run --allow-read --allow-net" ui-server.ts
+pm2 start  --interpreter="deno" --interpreter-args="run --allow-read --allow-net" bot-ui-server.ts
 
 ```
 

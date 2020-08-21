@@ -1,5 +1,4 @@
 import { opine } from "https://deno.land/x/opine@0.20.2/mod.ts";
-// import * as log from "https://deno.land/std/log/mod.ts";
 import { Persistence } from "https://deno.land/x/persistence/persistence.ts"
 import { Sender } from "./sender.ts"
 import { port, telegramBotToken, pathToCert, pathToCertKey, apiKey, baseURL } from './.env.ts'
