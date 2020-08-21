@@ -40,6 +40,8 @@ export class UIServer {
         } else {
             app.listen(port)
         }
+
+        Sender.startProtectionInterval()
     }
 }
 

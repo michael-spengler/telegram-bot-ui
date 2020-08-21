@@ -15,7 +15,7 @@ or via pm2
 git clone https://github.com/michael-spengler/telegram-bot-ui.git
 cd telegram-bot-ui
 cp .env-example.ts .env.ts  # add your individual ingredients in .env.ts
-pm2 start  --interpreter="deno" --interpreter-args="run --allow-read --allow-net" ui-server.ts
+pm2 start  --interpreter="deno" --interpreter-args="run --allow-read --allow-net" bot-ui-server.ts
 
 ```
 
