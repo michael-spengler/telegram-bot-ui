@@ -1,1 +1,0 @@
-pm2 start  --interpreter="deno" --interpreter-args="run --allow-read --allow-net" ui-server.ts

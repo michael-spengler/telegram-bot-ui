@@ -17,10 +17,9 @@
         function sendMessage() {
             var receiverChatId = document.getElementById('receiverChatId').value
             var textMessage = document.getElementById('textMessage').value
-
-            fetch(`http://localhost:3080/sendMessage/chatId/${receiverChatId}/textMessage/${textMessage}`)
+            fetch(`theFancyBaseURL/sendMessage/chatId/${receiverChatId}/textMessage/${textMessage}/apiKey/secret`)
                 .then((result) => alert('sent successfully'))
-                .catch((error) => alert('shit happened'))
+                .catch((error) => alert(`shit happened: ${error.message}`))
         }
     </script>
     <div class="container">

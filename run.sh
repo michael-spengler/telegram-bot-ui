@@ -1,1 +1,0 @@
-deno run --allow-read --allow-net ui-server.ts
