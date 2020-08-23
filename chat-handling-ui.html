@@ -18,8 +18,8 @@
             var chatId = document.getElementById('chatId').value
             fetch(`theFancyBaseURL/exportChatInviteLink/chatId/${chatId}?apiKey=secret`)
                 .then((result) => {
-                    alert(result)
-                    console.log(result)
+                    alert(JSON.stringify(result))
+                    console.log(JSON.stringify(result))
                 })
                 .catch((error) => alert(`shit happened: ${error.message}`))
         }

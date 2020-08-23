@@ -24,14 +24,14 @@ export class UIServer {
 
         app.get('/', authorizationMiddleware, async (req: any, res: any) => {
                 const html = (await Persistence.readFromLocalFile(UIServer.pathToSendMessageUIHTML))
-                    .replace('secret', req.params.apiKey)
+                    .replace('secret', req.query.apiKey)
                     .replace('theFancyBaseURL', baseURL)
                 res.send(html);
         });
 
         app.get('/chatHandling', authorizationMiddleware, async (req: any, res: any) => {
                 const html = (await Persistence.readFromLocalFile(UIServer.pathToChatHandlingUIHTML))
-                    .replace('secret', req.params.apiKey)
+                    .replace('secret', req.query.apiKey)
                     .replace('theFancyBaseURL', baseURL)
                 res.send(html);
         });
