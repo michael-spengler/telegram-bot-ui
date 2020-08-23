@@ -16,7 +16,7 @@
     <script>
         function exportChatInviteLink() {
             var chatId = document.getElementById('chatId').value
-            fetch(`theFancyBaseURL/exportChatInviteLink/chatId/${chatId}?apiKey=secret`)
+            fetch(`theFancyBaseURL/exportChatInviteLink/chatId/${chatId.toString()}?apiKey=secret`)
                 .then((result) => {
                     alert(typeof(result))
                     alert(JSON.stringify(result))
