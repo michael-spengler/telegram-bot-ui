@@ -17,7 +17,7 @@
         function sendMessage() {
             var receiverChatId = document.getElementById('receiverChatId').value
             var textMessage = document.getElementById('textMessage').value
-            fetch(`theFancyBaseURL/sendMessage/chatId/${receiverChatId}/textMessage/${textMessage}/apiKey/secret`)
+            fetch(`theFancyBaseURL/sendMessage/chatId/${receiverChatId}/textMessage/${textMessage}?apiKey=secret`)
                 .then((result) => alert('sent successfully'))
                 .catch((error) => alert(`shit happened: ${error.message}`))
         }
@@ -34,7 +34,7 @@
             <textarea id="textMessage" type="number" class="form-control" id="textMessage"
                       placeholder="Enter text message" name="textMessage" required></textarea>
         </div>
-        <button onclick="sendMessage()" class="btn btn-primary">Submit</button>
+        <button onclick="sendMessage()" class="btn btn-primary">Send Message</button>
     </div>
 
 </body>

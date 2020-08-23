@@ -16,7 +16,7 @@ export class Sender {
         }
     }
 
-    public static startProtectionInterval() {
+    public static startResetSecurityCounterInterval() {
         setInterval(() => {
             log.info(`resetting counter from ${Sender.counter} to 0`)
             Sender.counter = 0
