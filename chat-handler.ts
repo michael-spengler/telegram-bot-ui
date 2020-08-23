@@ -6,7 +6,7 @@ export class ChatHandler {
     public static async exportChatInviteLink(token: string, chatId: number): Promise<any> {
         log.info(`exporting chat invite link for ${chatId}`)
         await Request.get(`https://api.telegram.org/bot${token}/exportChatInviteLink?chat_id=${chatId}`)
-        const getChatResult = await Request.get(`https://api.telegram.org/bot${token}/getChat?chat_id=${chatId}`)
+        const getChatResult = (await Request.get(`https://api.telegram.org/bot${token}/getChat?chat_id=${chatId}`)).result
 
         log.warning(`getChatResult: ${JSON.stringify(getChatResult)}`)
 
