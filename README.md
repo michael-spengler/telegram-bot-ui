@@ -1,5 +1,8 @@
 # Telegram Bot UI Server
 
+This code is published as a [Deno Module](https://deno.land/x/telegram_bot_ui).  
+
+
 ## Usage Example
 
 ```sh
